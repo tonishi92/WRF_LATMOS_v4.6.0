@@ -1,0 +1,16 @@
+Two Registry files are prepared
+
+1. Registry/Registry.EM_COMMON.wrf
+   Usual Registry.EM_COMMON file for WRF (WRF-Chem) runs
+   To use this, create a symbolic link "Registry/Registry.EM_COMMON"
+   
+   ln -sf Registry/Registry.EM_COMMON.wrf Registry/Registry.EM_COMMON
+
+2. Registry/Registry.EM_COMMON.flexpart
+   Registry.EM_COMMON file prepared for Flexpart-WRF runs.
+   History outputs (h) are limited to variables necessary for Flexpart-WRF runs.
+   This will be useful to avoid unnecessarily large size for wrfout files.
+   To use this, create a symbolic link "Registry/Registry.EM_COMMON"
+
+   ln -sf Registry/Registry.EM_COMMON.flexpart Registry/Registry.EM_COMMON
+ 

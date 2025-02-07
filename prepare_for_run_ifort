@@ -1,0 +1,9 @@
+module restore wrf_modules
+export CFLAGS="-I${OPENMPI_ROOT}/include -m64"
+export LDFLAGS="-L${OPENMPI_ROOT}/lib -lmpi"
+export NETCDF=/home/onishi/NETCDF_DIR2/
+#export NETCDFPAR=/home/onishi/NETCDF_DIR2/
+export PHDF5=${HDF5_ROOT}
+export HDF5=${HDF5_ROOT}
+
+export MPI_LIB=-L${OPENMPI_ROOT}/lib

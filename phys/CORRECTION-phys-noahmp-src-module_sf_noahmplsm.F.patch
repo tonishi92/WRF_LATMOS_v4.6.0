@@ -1,0 +1,44 @@
+From 10403cb985208568d08bd6da205d9b880028b198 Mon Sep 17 00:00:00 2001
+From: tonishi92 <tatsuo.onishi@gmail.com>
+Date: Mon, 26 Aug 2024 16:39:27 +0200
+Subject: [PATCH] (CORRECTION) phys/noahmp/src/module_sf_noahmplsm.F
+ --------------  ! CORRECTION  CH = CH * UR  CM = CM * UR  ! CORRECTION
+ -------------- before "CALL SFCDIF2"
+
+---
+ src/module_sf_noahmplsm.F | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/src/module_sf_noahmplsm.F b/src/module_sf_noahmplsm.F
+index 3ec4ade..cda6da7 100644
+--- a/src/module_sf_noahmplsm.F
++++ b/src/module_sf_noahmplsm.F
+@@ -3894,7 +3894,11 @@ ENDIF   ! CROPTYPE == 0
+                        CM     ,CH     ,FV     ,CH2     )          !out
+        ENDIF
+      
+-       IF(OPT_SFC == 2) THEN
++       IF(OPT_SFC == 2) THEN 
++           ! CORRECTION 
++           CH = CH * UR 
++           CM = CM * UR 
++           ! CORRECTION 
+           CALL SFCDIF2(parameters,ITER   ,Z0M    ,TAH    ,THAIR  ,UR     , & !in
+                        ZLVL   ,ILOC   ,JLOC   ,         & !in
+                        CM     ,CH     ,MOZ    ,WSTAR  ,         & !in
+@@ -4364,7 +4368,11 @@ ENDIF   ! CROPTYPE == 0
+                        CM     ,CH     ,FV     ,CH2     )          !out
+         ENDIF
+ 
+-        IF(OPT_SFC == 2) THEN
++        IF(OPT_SFC == 2) THEN 
++           ! CORRECTION 
++           CH = CH * UR 
++           CM = CM * UR 
++           ! CORRECTION 
+           CALL SFCDIF2(parameters,ITER   ,Z0M    ,TGB    ,THAIR  ,UR     , & !in
+                        ZLVL   ,ILOC   ,JLOC   ,         & !in
+                        CM     ,CH     ,MOZ    ,WSTAR  ,         & !in
+-- 
+2.31.1
+
