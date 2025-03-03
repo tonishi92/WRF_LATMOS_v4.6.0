@@ -1,9 +1,0 @@
-(CORRECTION) phys/noahmp/src/module_sf_noahmplsm.F
---------------
- ! CORRECTION
- CH = CH * UR
- CM = CM * UR
- ! CORRECTION
---------------
-before "CALL SFCDIF2"
-
